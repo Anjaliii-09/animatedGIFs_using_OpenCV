@@ -23,7 +23,7 @@ def create_gif(image_dir, output_gif_path):
 
     # Iterate through images in the directory
     for filename in sorted(os.listdir(image_dir)):
-        if filename.endswith('.jpeg') or filename.endswith('.png'):
+        if filename.lower().endswith(('.jpeg', '.png', '.gif')):
             img_path = os.path.join(image_dir, filename)
             print(f"Processing image: {img_path}")
             image = cv2.imread(img_path)
